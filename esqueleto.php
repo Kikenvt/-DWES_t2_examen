@@ -1,4 +1,6 @@
 <?php
+require 'articulo.php';
+require 'pizza.php';
 
 // solicitar los archivos "articulo.php", "bebida.php", "pizza.php";
 
