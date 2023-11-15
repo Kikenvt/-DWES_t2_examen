@@ -1,6 +1,6 @@
 <?php
 class Bebida extends Articulo{
-    public $alcohol;
+    private $alcohol;
 
     public function __construct($name, $cost, $price, $count, $alcohol){
         parent::__construct($name,$cost, $price, $count);

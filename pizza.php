@@ -1,6 +1,6 @@
 <?php
 class Pizza extends Articulo{
-    public $ingredients;
+    private $ingredients;
 
     public function __construct($name, $cost, $price, $count, $ingredients){
         parent::__construct($name,$cost, $price, $count);

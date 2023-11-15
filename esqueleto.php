@@ -1,4 +1,8 @@
-<?php
+<?php 
+////
+//Enrique Fernandez - Campoamor Fernandez
+// Github: https://github.com/Kikenvt/-DWES_t2_examen.git
+////
 require 'articulo.php';
 require 'pizza.php';
 require 'bebida.php';
@@ -47,13 +51,33 @@ function mostrarMenu($articulos) {
 }
 
 function mostrarMasVendidos($articulos) {
-    echo "<h1>Los más vendidos</h1>";
+    echo "<h2>Los más vendidos</h2>";
+
     usort($articulos, function($a, $b) {
+        return $b->getCount() - $a->getCount();
+    });
+    
+    for($i=0; $i<3; $i++) {
 
+        echo $articulos[$i]->getName() . ", Vendidos: " . $articulos[$i]->getCount() . "<br>";
+    }
 
-});
+}
 
 function mostrarMasLucrativos($articulos) {
+    echo "<h2>Los más lucrativos</h2>";
+
+    usort($articulos, function ($a, $b) {
+        $benefit1 = ($a->getPrice() - $a->getCost()) * $a->getCount();
+        $benefit2 = ($b->getPrice() - $b->getCost()) * $b->getCount();
+ 
+        return $benefit2 - $benefit1;
+    });
+ 
+    foreach ($articulos as $articulo) {
+        $benefit = ($articulo->getPrice() - $articulo->getCost()) * $articulo->getCount();
+        echo $articulo->getName() . " - Beneficio: {$benefit} €<br>";
+    }
 
 }
 
