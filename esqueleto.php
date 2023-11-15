@@ -25,12 +25,33 @@ mostrarMasVendidos($articulos);
 mostrarMasLucrativos($articulos);
 
 function mostrarMenu($articulos) {
-
+    echo "<h1>Nuestro Menú</h1>";
+    echo "<h2>Pizzas</h2>";
+    foreach ($articulos as $pizzas) {
+        if ($pizzas instanceof Pizza) {
+            echo $pizzas->getName() . "<br>";
+        }
+    }
+    echo "<h2>Bebidas</h2>";
+    foreach ($articulos as $bebida) {
+        if ($bebida instanceof Bebida) {
+            echo $bebida->getName(). "<br>";
+        }
+    }
+    echo "<h2>Otros</h2>";
+    foreach ($articulos as $otros) {
+        if(!($otros instanceof Pizza) and !($otros instanceof Bebida)) {
+            echo $otros->getName(). "<br>";
+        }
+    }
 }
 
 function mostrarMasVendidos($articulos) {
+    echo "<h1>Los más vendidos</h1>";
+    usort($articulos, function($a, $b) {
 
-}
+
+});
 
 function mostrarMasLucrativos($articulos) {
 

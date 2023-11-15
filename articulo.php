@@ -2,9 +2,9 @@
 
 class Articulo {
     private $name;
-    private $cost;
-    private $price;
-    private $count;
+    public $cost;
+    public $price;
+    public $count;
 
     public function __construct($name, $cost, $price, $count) {
         $this->name = $name;

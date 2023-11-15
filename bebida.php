@@ -1,6 +1,6 @@
 <?php
 class Bebida extends Articulo{
-    private $alcohol;
+    public $alcohol;
 
     public function __construct($name, $cost, $price, $count, $alcohol){
         parent::__construct($name,$cost, $price, $count);
@@ -17,11 +17,6 @@ class Bebida extends Articulo{
         return parent::__toString() . "Alcohílica: " . ($this->alcohol ? "Sí":"No");
     }
 }
-
-
-
-
-
 
 
 ?>
